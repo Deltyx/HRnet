@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react'
 import Dropdown from '../dropdown/dropdown';
 
 import './employeeCreateForm.scss';
@@ -8,82 +7,56 @@ import { states } from '../../dropdownData/states';
 import { departments } from '../../dropdownData/departments';
 
 export function EmployeeCreateForm(props) {
-
-    const [employee, setEmployee] = useState({
-        firstName: "",
-        lastName: "",
-        birthDate: new Date(),
-        startingDate: new Date(),
-        street: "",
-        city: "",
-        state: "",
-        zipCode: 0,
-        department: "",
-    })
-
-    const handleChange = (prop) => (e) => {
-        setEmployee({ ...employee, [prop]: e.target.value })
-    }
-
-    const handleChangeDate = (prop) => (newDate) => {
-        setEmployee({ ...employee, [prop]: newDate.$d })
-    }
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        props.setModal(true);
-        console.log(employee)
-    }
     
     return (
-        <form className='employeeForm' onSubmit={handleSubmit}>
+        <form className='employeeForm' onSubmit={props.onSubmit}>
             <InputRequired 
                 label="First Name"
-                value={employee.firstName}
-                onChange={handleChange('firstName')}
+                value={props.employee.firstName}
+                onChange={props.onChange('firstName')}
             />
             <InputRequired 
                 label="Last Name"
-                value={employee.lastName}
-                onChange={handleChange('lastName')}
+                value={props.employee.lastName}
+                onChange={props.onChange('lastName')}
             />
             <DatePicker 
                 label="Birth Date"
-                onChange={handleChangeDate('birthDate')}
-                value={employee.birthDate}
+                onChange={props.onChangeDate('birthDate')}
+                value={props.employee.birthDate}
             />            
             <DatePicker 
                 label="Starting Date"
-                onChange={handleChangeDate('startingDate')}
-                value={employee.startingDate}
+                onChange={props.onChangeDate('startingDate')}
+                value={props.employee.startingDate}
             />
             <InputRequired 
                 label="Street"
-                value={employee.street}
-                onChange={handleChange('street')}
+                value={props.employee.street}
+                onChange={props.onChange('street')}
             />
             <InputRequired 
                 label="City"
-                value={employee.city}
-                onChange={handleChange('city')}
+                value={props.employee.city}
+                onChange={props.onChange('city')}
             />
             <Dropdown 
                 label="State"
-                value={employee.state}
-                onChange={handleChange('state')}
+                value={props.employee.state}
+                onChange={props.onChange('state')}
                 dropdownTitle="State"
                 list={states}
             />
             <InputRequired 
                 label='Zip Code'
-                value={employee.zipCode}
+                value={props.employee.zipCode}
                 type='number'
-                onChange={handleChange('zipCode')}
+                onChange={props.onChange('zipCode')}
             />
             <Dropdown 
                 label="Department"
-                value={employee.department}
-                onChange={handleChange('department')}
+                value={props.employee.department}
+                onChange={props.onChange('department')}
                 dropdownTitle="Department"
                 list={departments}
             />

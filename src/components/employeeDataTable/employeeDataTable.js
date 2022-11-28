@@ -63,21 +63,21 @@ const columns = [
 ];
 
 const rows = [
-  {id:1, lastName: 'Snow', firstName: 'Jon', startDate: new Date(), departement:'Sales', birthDate: new Date(), street:"Lost", city:"In", state:"Internet", zipCode:420 },
-  {id:2, lastName: 'Snow', firstName: 'Jon', startDate: new Date(), departement:'Sales', birthDate: new Date(), street:"Lost", city:"In", state:"Internet", zipCode:420 },
-  {id:3, lastName: 'Snow', firstName: 'Jon', startDate: new Date(), departement:'Sales', birthDate: new Date(), street:"Lost", city:"In", state:"Internet", zipCode:420 },
-  {id:4, lastName: 'Snow', firstName: 'Jon', startDate: new Date(), departement:'Sales', birthDate: new Date(), street:"Lost", city:"In", state:"Internet", zipCode:420 },
-  {id:5, lastName: 'Snow', firstName: 'Jon', startDate: new Date(), departement:'Sales', birthDate: new Date(), street:"Lost", city:"In", state:"Internet", zipCode:420 },
-  {id:6, lastName: 'Snow', firstName: 'Jon', startDate: new Date(), departement:'Sales', birthDate: new Date(), street:"Lost", city:"In", state:"Internet", zipCode:420 },
-  {id:7, lastName: 'Snow', firstName: 'Jon', startDate: new Date(), departement:'Sales', birthDate: new Date(), street:"Lost", city:"In", state:"Internet", zipCode:420 },
-  {id:8, lastName: 'Snow', firstName: 'Jon', startDate: new Date(), departement:'Sales', birthDate: new Date(), street:"Lost", city:"In", state:"Internet", zipCode:420 },
-  {id:9, lastName: 'Snow', firstName: 'Jon', startDate: new Date(), departement:'Sales', birthDate: new Date(), street:"Lost", city:"In", state:"Internet", zipCode:420 },
-  {id:10, lastName: 'Snow', firstName: 'Jon', startDate: new Date(), departement:'Sales', birthDate: new Date(), street:"Lost", city:"In", state:"Internet", zipCode:420 },
-  {id:11, lastName: 'Snow', firstName: 'Jon', startDate: new Date(), departement:'Sales', birthDate: new Date(), street:"Lost", city:"In", state:"Internet", zipCode:420 },
-  {id:12, lastName: 'Snow', firstName: 'Jon', startDate: new Date(), departement:'Sales', birthDate: new Date(), street:"Lost", city:"In", state:"Internet", zipCode:420 },
-  {id:13, lastName: 'Snow', firstName: 'Jon', startDate: new Date(), departement:'Sales', birthDate: new Date(), street:"Lost", city:"In", state:"Internet", zipCode:420 },
-  {id:14, lastName: 'Snow', firstName: 'Jon', startDate: new Date(), departement:'Sales', birthDate: new Date(), street:"Lost", city:"In", state:"Internet", zipCode:420 },
-  {id:15, lastName: 'Snow', firstName: 'Jon', startDate: new Date(), departement:'Sales', birthDate: new Date(), street:"Lost", city:"In", state:"Internet", zipCode:420 },
+  {id:1, lastName: 'Snow', firstName: 'Jon', startDate: new Date(), departement:'Sales', birthDate: new Date(), street:"Lost", city:"In The", state:"Internet", zipCode:420 },
+  {id:2, lastName: 'Snow', firstName: 'Jon', startDate: new Date(), departement:'Sales', birthDate: new Date(), street:"Lost", city:"In The", state:"Internet", zipCode:420 },
+  {id:3, lastName: 'Snow', firstName: 'Jon', startDate: new Date(), departement:'Sales', birthDate: new Date(), street:"Lost", city:"In The", state:"Internet", zipCode:420 },
+  {id:4, lastName: 'Snow', firstName: 'Jon', startDate: new Date(), departement:'Sales', birthDate: new Date(), street:"Lost", city:"In The", state:"Internet", zipCode:420 },
+  {id:5, lastName: 'Snow', firstName: 'Jon', startDate: new Date(), departement:'Sales', birthDate: new Date(), street:"Lost", city:"In The", state:"Internet", zipCode:420 },
+  {id:6, lastName: 'Snow', firstName: 'Jon', startDate: new Date(), departement:'Sales', birthDate: new Date(), street:"Lost", city:"In The", state:"Internet", zipCode:420 },
+  {id:7, lastName: 'Snow', firstName: 'Jon', startDate: new Date(), departement:'Sales', birthDate: new Date(), street:"Lost", city:"In The", state:"Internet", zipCode:420 },
+  {id:8, lastName: 'Snow', firstName: 'Jon', startDate: new Date(), departement:'Sales', birthDate: new Date(), street:"Lost", city:"In The", state:"Internet", zipCode:420 },
+  {id:9, lastName: 'Snow', firstName: 'Jon', startDate: new Date(), departement:'Sales', birthDate: new Date(), street:"Lost", city:"In The", state:"Internet", zipCode:420 },
+  {id:10, lastName: 'Snow', firstName: 'Jon', startDate: new Date(), departement:'Sales', birthDate: new Date(), street:"Lost", city:"In The", state:"Internet", zipCode:420 },
+  {id:11, lastName: 'Snow', firstName: 'Jon', startDate: new Date(), departement:'Sales', birthDate: new Date(), street:"Lost", city:"In The", state:"Internet", zipCode:420 },
+  {id:12, lastName: 'Snow', firstName: 'Jon', startDate: new Date(), departement:'Sales', birthDate: new Date(), street:"Lost", city:"In The", state:"Internet", zipCode:420 },
+  {id:13, lastName: 'Snow', firstName: 'Jon', startDate: new Date(), departement:'Sales', birthDate: new Date(), street:"Lost", city:"In The", state:"Internet", zipCode:420 },
+  {id:14, lastName: 'Snow', firstName: 'Jon', startDate: new Date(), departement:'Sales', birthDate: new Date(), street:"Lost", city:"In The", state:"Internet", zipCode:420 },
+  {id:15, lastName: 'Snow', firstName: 'Jon', startDate: new Date(), departement:'Sales', birthDate: new Date(), street:"Lost", city:"In The", state:"Internet", zipCode:420 },
 ];
 
 export function EmployeeDataTable() {
