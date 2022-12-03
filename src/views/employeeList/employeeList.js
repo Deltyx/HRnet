@@ -11,7 +11,8 @@ export function EmployeeList() {
 
     const employeeListState = useSelector(state => state.employeeList.list)
     const [employeeListDataTable, setDataTable] = useState([])
-    const [filter, setFilter] = useState('')
+    const [filteredList, setFilteredList] = useState([])
+    const [filterValue, setFilterValue] = useState('')
     useEffect(() => {
         const indexedDataList = []
         employeeListState.map((employee, index) => {
@@ -32,7 +33,10 @@ export function EmployeeList() {
     },[employeeListState])
 
     const handleSearch = (e) => {
-
+        setFilterValue(e.target.value)
+        setFilteredList(employeeListDataTable.filter(employee => employee.firstName = filterValue))
+        console.log("Filtered List",filteredList)
+        console.log("Employee List",employeeListDataTable)
     }
 
     return (
@@ -40,7 +44,7 @@ export function EmployeeList() {
             <div>
                 <InputRequired 
                     label="Search"
-                    value={filter}
+                    value={filterValue}
                     onChange={handleSearch}
                 />
             </div>
