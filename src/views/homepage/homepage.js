@@ -1,15 +1,20 @@
 import { useState } from "react";
 import { EmployeeCreateForm } from "../../components/employeeCreateForm/employeeCreateForm";
 import { Modal } from "../../components/modal/modal";
+import { useDispatch, useSelector } from "react-redux";
+import { addEmployee } from "../../features/employeeListSlice";
+import dayjs from "dayjs";
 
 
 export function Homepage() {
+    const dispatch = useDispatch()
+    const employeeListState = useSelector(state => state.employeeList)
     const [isModalOpen, setModalOpen] = useState(false)
     const [employee, setEmployee] = useState({
         firstName: "",
         lastName: "",
-        birthDate: new Date(),
-        startingDate: new Date(),
+        birthDate: dayjs(new Date()).format('MM/DD/YYYY'),
+        startingDate: dayjs(new Date()).format('MM/DD/YYYY'),
         street: "",
         city: "",
         state: "",
@@ -22,13 +27,26 @@ export function Homepage() {
     }
 
     const handleChangeDate = (prop) => (newDate) => {
-        setEmployee({ ...employee, [prop]: newDate.$d })
+        const formatedDate = dayjs(newDate.$d).format('MM/DD/YYYY')
+        setEmployee({ ...employee, [prop]: formatedDate })
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setModalOpen(true);
+        console.log("LIST", employeeListState.list)
+        try {
+            const list = []
+            dispatch(addEmployee(...list, employee))
+
+            setModalOpen(true);
+        } catch (err) {
+            console.log(err)
+        }
         console.log(employee)
+    }
+
+    const hideModal = () => {
+        setModalOpen(false)
     }
 
     return (
@@ -39,7 +57,12 @@ export function Homepage() {
                 onChangeDate={handleChangeDate}
                 employee={employee}
             />
-            {isModalOpen && <Modal onClose={setModalOpen}/>}
+            {isModalOpen && 
+                <Modal
+                    onClose={hideModal} 
+                    content='Employee Created !'
+                />
+            }
         </>
     )
 }
