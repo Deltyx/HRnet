@@ -6,7 +6,7 @@ export function Modal(props) {
         <div className="modal">
             <button onClick={props.onClose}>X</button>
             <div className="modal-content">
-                User Created !
+                {props.content}
             </div>
         </div>
     )
