@@ -1,13 +1,13 @@
 .modal {
     display: flex;
+    position: relative;
     flex-direction: column;
     align-items: center;
 
     border-radius: 5px;
 
     background: white;
-    width: 40%;
-    height: 25%;
+    width: 15%;
 
     padding: 1rem;
 }
@@ -27,10 +27,24 @@
 
 .modal-header {
     display: flex;
-    justify-content: space-between;
     width: 100%;
 }
 
 .modal-title {
-    font-size: 26px;
+    font-size: 22px;
+}
+
+.modal-btn {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    top: -12px;
+    right: -12px;
+    border-radius: 50%;
+    border: none;
+    background-color: #1976d2;
+}
+
+.modal-btn:hover {
+    cursor: pointer;;
 }

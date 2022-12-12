@@ -5,7 +5,7 @@ import FormControl from '@mui/material/FormControl';
 export function InputRequired(props) {
 
     return (
-        <FormControl fullWidth sx={{ m: 1 }} variant="standard">
+        <FormControl fullWidth sx={{ m: 1, margin:"none" }}  variant="standard">
             <InputLabel htmlFor="standard-adornment-amount">{props.label}</InputLabel>
             <Input
                 required

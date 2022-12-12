@@ -10,18 +10,21 @@ import { InputRequired } from "../../components/inputRequired/inputRequired";
 export function EmployeeList() {
 
     const employeeListState = useSelector(state => state.employeeList.list)
+
     const [employeeListDataTable, setDataTable] = useState([])
+
     const [filteredList, setFilteredList] = useState([])
     const [filterValue, setFilterValue] = useState('')
+
     useEffect(() => {
         const indexedDataList = []
-        employeeListState.map((employee, index) => {
+        employeeListState.forEach((employee, index) => {
             indexedDataList.push({
                 id: index,
                 firstName: employee.firstName,
                 lastName: employee.lastName,
                 startingDate: employee.startingDate,
-                departement: employee.departement,
+                department: employee.department,
                 birthDate: employee.birthDate,
                 street: employee.street,
                 city: employee.city,
@@ -32,26 +35,44 @@ export function EmployeeList() {
         setDataTable(indexedDataList)
     },[employeeListState])
 
+    useEffect(() => {
+        if(filterValue.length < 3) {
+            setFilteredList(employeeListDataTable)
+        }
+    },[employeeListDataTable, filterValue])
+
     const handleSearch = (e) => {
         setFilterValue(e.target.value)
-        setFilteredList(employeeListDataTable.filter(employee => employee.firstName = filterValue))
-        console.log("Filtered List",filteredList)
-        console.log("Employee List",employeeListDataTable)
+        if(e.target.value.length >= 0) {
+            setFilteredList(employeeListDataTable.filter(employee => 
+                employee.firstName.includes(filterValue) ||
+                employee.lastName.includes(filterValue) || 
+                employee.startingDate.toString().includes(filterValue) ||
+                employee.department.includes(filterValue) ||
+                employee.birthDate.toString().includes(filterValue) ||
+                employee.street.includes(filterValue) ||
+                employee.city.includes(filterValue) ||
+                employee.state.includes(filterValue) ||
+                employee.zipCode.toString().includes(filterValue)
+            ))
+        }
     }
 
     return (
-        <section className="employeeList__wrapper">
-            <div>
-                <InputRequired 
-                    label="Search"
-                    value={filterValue}
-                    onChange={handleSearch}
+        <div className="employeeList__body">
+            <section className="employeeList__wrapper">
+                <div className="employeeList__header">
+                    <InputRequired 
+                        label="Search Employee"
+                        value={filterValue}
+                        onChange={handleSearch}
+                    />
+                </div>
+                <EmployeeDataTable 
+                    rows={filteredList && filteredList}
+                    columns={columns}
                 />
-            </div>
-            <EmployeeDataTable 
-                rows={employeeListDataTable && employeeListDataTable}
-                columns={columns}
-            />
-        </section>
+            </section>
+        </div>
     )
 }

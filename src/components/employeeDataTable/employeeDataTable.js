@@ -1,14 +1,19 @@
 import Box from '@mui/material/Box';
 import { DataGrid } from '@mui/x-data-grid';
+import { useState } from 'react';
 
 export function EmployeeDataTable(props) {
+
+  const [pageSize, setPageSize] = useState(5)
+
   return (
     <Box sx={{ height: 631, width: '100%' }}>
       <DataGrid
         rows={props.rows}
         columns={props.columns}
-        pageSize={10}
-        rowsPerPageOptions={[10]}
+        pageSize={pageSize}
+        rowsPerPageOptions={[5, 10]}
+        onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
         disableSelectionOnClick
         experimentalFeatures={{ newEditingApi: true }}
       />

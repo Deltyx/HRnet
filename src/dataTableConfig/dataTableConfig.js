@@ -19,7 +19,7 @@
       editable: true,
     },
     {
-      field: 'departement',
+      field: 'department',
       headerName: 'Department',
       width: 150,
       editable: true,

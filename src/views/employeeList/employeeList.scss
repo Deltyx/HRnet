@@ -1,4 +1,18 @@
+.employeeList__body {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+}
+
 .employeeList__wrapper {
     width: 80%;
     align-self: center;
 }
+
+.employeeList__header {
+    display: flex;
+    justify-content: space-between;
+    max-width: 256px;
+    padding-bottom: 1rem;
+}
+

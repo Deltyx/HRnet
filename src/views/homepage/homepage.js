@@ -4,6 +4,7 @@ import { Modal } from "../../components/modal/modal";
 import { useDispatch, useSelector } from "react-redux";
 import { addEmployee } from "../../features/employeeListSlice";
 import dayjs from "dayjs";
+import "./homepage.scss";
 
 
 export function Homepage() {
@@ -51,16 +52,18 @@ export function Homepage() {
 
     return (
         <>
-            <EmployeeCreateForm 
-                onChange={handleChange}
-                onSubmit={handleSubmit}
-                onChangeDate={handleChangeDate}
-                employee={employee}
-            />
+            <div className="homepage__body">
+                <EmployeeCreateForm 
+                    onChange={handleChange}
+                    onSubmit={handleSubmit}
+                    onChangeDate={handleChangeDate}
+                    employee={employee}
+                />
+            </div>
             {isModalOpen && 
                 <Modal
                     onClose={hideModal} 
-                    content='Employee Created !'
+                    title='Employee Created !'
                 />
             }
         </>

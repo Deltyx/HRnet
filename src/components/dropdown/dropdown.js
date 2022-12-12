@@ -12,7 +12,7 @@ export default function Dropdown(props) {
 
 
     return (
-        <FormControl sx={{ m: 1, minWidth: 180 }}>
+        <FormControl sx={{ m: 1, minWidth: 265, maxWidth:265, margin:"none" }}>
             <InputLabel>{props.dropdownTitle}</InputLabel>
             <Select
                 value={props.value}

@@ -5,54 +5,64 @@ import { DatePicker } from '../datePicker/datePicker';
 import { InputRequired } from '../inputRequired/inputRequired';
 import { states } from '../../dropdownData/states';
 import { departments } from '../../dropdownData/departments';
+import { Button } from '@mui/material';
 
 export function EmployeeCreateForm(props) {
     
     return (
         <form className='employeeForm' onSubmit={props.onSubmit}>
-            <InputRequired 
-                label="First Name"
-                value={props.employee.firstName}
-                onChange={props.onChange('firstName')}
-            />
-            <InputRequired 
-                label="Last Name"
-                value={props.employee.lastName}
-                onChange={props.onChange('lastName')}
-            />
-            <DatePicker 
-                label="Birth Date"
-                onChange={props.onChangeDate('birthDate')}
-                value={props.employee.birthDate}
-            />            
-            <DatePicker 
-                label="Starting Date"
-                onChange={props.onChangeDate('startingDate')}
-                value={props.employee.startingDate}
-            />
-            <InputRequired 
-                label="Street"
-                value={props.employee.street}
-                onChange={props.onChange('street')}
-            />
-            <InputRequired 
-                label="City"
-                value={props.employee.city}
-                onChange={props.onChange('city')}
-            />
-            <Dropdown 
-                label="State"
-                value={props.employee.state}
-                onChange={props.onChange('state')}
-                dropdownTitle="State"
-                list={states}
-            />
-            <InputRequired 
-                label='Zip Code'
-                value={props.employee.zipCode}
-                type='number'
-                onChange={props.onChange('zipCode')}
-            />
+            <h1 className='employeeForm__title'>Create Employee Form</h1>
+            <div className='employeeForm__names'>
+                <InputRequired 
+                    label="First Name"
+                    value={props.employee.firstName}
+                    onChange={props.onChange('firstName')}
+                />
+                <InputRequired 
+                    label="Last Name"
+                    value={props.employee.lastName}
+                    onChange={props.onChange('lastName')}
+                />
+            </div>
+            <div className='employeeForm__dates'>
+                <DatePicker 
+                    label="Birth Date"
+                    onChange={props.onChangeDate('birthDate')}
+                    value={props.employee.birthDate}
+                />            
+                <DatePicker 
+                    label="Starting Date"
+                    onChange={props.onChangeDate('startingDate')}
+                    value={props.employee.startingDate}
+                />
+            </div>
+            <div className='employeeForm__address'>
+                <InputRequired 
+                    label="Street"
+                    value={props.employee.street}
+                    onChange={props.onChange('street')}
+                />
+                <InputRequired 
+                    label="City"
+                    value={props.employee.city}
+                    onChange={props.onChange('city')}
+                />
+            </div>
+            <div className='employeeForm__address'>
+                <Dropdown 
+                    label="State"
+                    value={props.employee.state}
+                    onChange={props.onChange('state')}
+                    dropdownTitle="State"
+                    list={states}
+                />
+                <InputRequired 
+                    label='Zip Code'
+                    value={props.employee.zipCode}
+                    type='number'
+                    onChange={props.onChange('zipCode')}
+                />
+            </div>
             <Dropdown 
                 label="Department"
                 value={props.employee.department}
@@ -60,7 +70,9 @@ export function EmployeeCreateForm(props) {
                 dropdownTitle="Department"
                 list={departments}
             />
-            <button>SAVE</button>
+            <div className='btn__submit'>
+                <Button variant='contained' color='primary' type="submit"><strong>SAVE</strong></Button>
+            </div>
         </form>
     )
 }
