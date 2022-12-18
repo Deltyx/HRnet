@@ -14,7 +14,6 @@
     {
       field: 'startingDate',
       headerName: 'Starting Date',
-      type: 'date',
       width: 120,
       editable: true,
     },
@@ -27,7 +26,6 @@
     {
       field: 'birthDate',
       headerName: 'Birth Date',
-      type: 'date',
       width: 120,
       editable: true,
     },
@@ -52,7 +50,6 @@
     {
       field: 'zipCode',
       headerName: 'Zip Code',
-      type: 'number',
       width: 130,
       editable: true,
     },

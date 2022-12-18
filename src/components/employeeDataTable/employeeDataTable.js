@@ -1,5 +1,5 @@
 import Box from '@mui/material/Box';
-import { DataGrid } from '@mui/x-data-grid';
+import { DataGrid, GridToolbar, GridToolbarQuickFilter } from '@mui/x-data-grid';
 import { useState } from 'react';
 
 export function EmployeeDataTable(props) {
@@ -16,6 +16,9 @@ export function EmployeeDataTable(props) {
         onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
         disableSelectionOnClick
         experimentalFeatures={{ newEditingApi: true }}
+        components={{
+          Toolbar: GridToolbarQuickFilter
+        }}
       />
     </Box>
   );

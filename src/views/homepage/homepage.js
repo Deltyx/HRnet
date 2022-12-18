@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { EmployeeCreateForm } from "../../components/employeeCreateForm/employeeCreateForm";
 import { Modal } from "../../components/modal/modal";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addEmployee } from "../../features/employeeListSlice";
 import dayjs from "dayjs";
 import "./homepage.scss";
@@ -9,7 +9,6 @@ import "./homepage.scss";
 
 export function Homepage() {
     const dispatch = useDispatch()
-    const employeeListState = useSelector(state => state.employeeList)
     const [isModalOpen, setModalOpen] = useState(false)
     const [employee, setEmployee] = useState({
         firstName: "",
@@ -34,7 +33,6 @@ export function Homepage() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log("LIST", employeeListState.list)
         try {
             const list = []
             dispatch(addEmployee(...list, employee))
@@ -43,7 +41,6 @@ export function Homepage() {
         } catch (err) {
             console.log(err)
         }
-        console.log(employee)
     }
 
     const hideModal = () => {

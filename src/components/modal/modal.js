@@ -12,7 +12,7 @@ export function Modal(props) {
                 </div>
                 <button className='modal-btn' onClick={props.onClose}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 14 14" fill="none">
-                    <path fill-rule="evenodd" clip-rule="evenodd" 
+                    <path fillRule="evenodd" clipRule="evenodd" 
                         d="M13.7071 1.70711C14.0976 1.31658 
                         14.0976 0.683417 13.7071 0.292893C13.3166 
                         -0.0976311 12.6834 -0.0976311 12.2929 
